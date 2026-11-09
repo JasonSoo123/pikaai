@@ -180,7 +180,7 @@ pytest tests/ -v
 
 ## Related Projects
 
-- **[pikabot](../pikabot/)**: Competitive VGC doubles battle bot with self-play tournament mode
+- **[pikabot](../pikabot/)**: Competitive VGC doubles battle bot
 
 ## License
 
