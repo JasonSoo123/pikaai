@@ -9,23 +9,23 @@
 │                        PikaAI Pipeline                          │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐      │
-│  │ Data Sources │───▶│  Ingestion   │───▶│  Vector DB   │      │
-│  │  (PokéAPI,   │    │  & Chunking  │    │  (Chroma/    │      │
-│  │   VGC Rules, │    │              │    │   FAISS)     │      │
-│  │   Battle     │    │              │    │              │      │
-│  │   Logs)      │    │              │    │              │      │
-│  └──────────────┘    └──────────────┘    └──────┬───────┘      │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐       │
+│  │ Data Sources │───▶│  Ingestion   │───▶│  Vector DB   │       │
+│  │  (PokéAPI,   │    │  & Chunking  │    │  (Chroma/    │       │
+│  │   VGC Rules, │    │              │    │   FAISS)     │       │ 
+│  │   Battle     │    │              │    │              │       │
+│  │   Logs)      │    │              │    │              │       │
+│  └──────────────┘    └──────────────┘    └──────┬───────┘       │
 │                                                  │              │
 │                                                  ▼              │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐      │
-│  │   LoRA       │◀───│  Generator   │◀───│  Retriever   │      │
-│  │  Adapter     │    │  (LLM +      │    │  (Embedding  │      │
-│  │              │    │   Context)   │    │   + Search)  │      │
-│  └──────────────┘    └──────────────┘    └──────────────┘      │
-│        ▲                                       │               │
-│        │                                       │               │
-│        └───────────────────────────────────────┘               │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐       │
+│  │   LoRA       │◀───│  Generator   │◀───│  Retriever   │       │
+│  │  Adapter     │    │  (LLM +      │    │  (Embedding  │       │
+│  │              │    │   Context)   │    │   + Search)  │       │
+│  └──────────────┘    └──────────────┘    └──────────────┘       │
+│        ▲                                       │                │
+│        │                                       │                │
+│        └───────────────────────────────────────┘                │
 │                              │                                  │
 │                              ▼                                  │
 │                    ┌──────────────────┐                         │
@@ -41,7 +41,7 @@
 ### 1. Data Ingestion (`src/data/ingestion.py`)
 - Fetches data from **PokéAPI** (pokemon, moves, abilities, items, types)
 - Processes VGC rules and regulations
-- Ingests battle logs from `pikabot/battle_logs/master.json`
+- Ingests battle logs from `master.json`
 - Chunks documents for optimal embedding
 
 ### 2. RAG Pipeline (`src/rag/`)
@@ -181,7 +181,6 @@ pytest tests/ -v
 ## Related Projects
 
 - **[pikabot](../pikabot/)**: Competitive VGC doubles battle bot with self-play tournament mode
-- **[pokemon-showdown](../pokemon-showdown/)**: Local Pokemon Showdown simulator server
 
 ## License
 
