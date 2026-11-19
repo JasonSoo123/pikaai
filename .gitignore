@@ -1,2 +1,6 @@
 __pycache__/
 *.pycdata/raw/master.jsonl
+.env
+.env.*
+*.env
+data/raw/master.jsonl
